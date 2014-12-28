@@ -28,12 +28,12 @@
 											
 											 $.getJSON("http://pln.ifabula.com/mobility_controller/display_customer_trans", function (result) 
 											 {
-												for(var item in result){
+												for (var item in result){
 													  labels.push(result[item].periode_trans.toString());
 													  data_postpaid.push(result[item].total_cust_postpaid.toString());
 													  data_prepaid.push(result[item].total_cust_prepaid.toString());
 												  }
-												  //$("#test").html(result[1].periode_trans);
+												  $("#test").html(labels);
 											 });
 										
 										
