@@ -34,7 +34,7 @@
 <script type="text/javascript" src="scripts/custom.js"></script>
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
-
+<script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
 
@@ -54,21 +54,20 @@
                 <div class="container no-bottom">
                     <div class="contact-form no-bottom"> 
                     
-                        <form action="main.html" method="post" class="contactForm" id="contactForm">
                             <fieldset>
                                 <div class="formFieldWrap">
                                     <label class="field-title contactNameField" for="contactNameField">Username:</label>
-                                    <input type="text" name="UsernameField" value="" class="contactField" id="UsernameField"/>
+                                    <input type="text" name="username" value="" class="contactField" id="username"/>
                                 </div>
                                 <div class="formFieldWrap">
                                     <label class="field-title contactEmailField" for="contactEmailField">Password:</label>
-                                    <input type="password" name="contactPasswordField" value="" class="contactField" id="contactPasswordField"/>
+                                    <input type="password" name="password" value="" class="contactField" id="password"/>
                                 </div>
                                 <div class="formSubmitButtonErrorsWrap">
-                                    <input type="submit" class="buttonWrap button button-blue2 contactSubmitButton" value="LOGIN"/>
+                                    <input type="submit"  id="button"  class="buttonWrap button button-blue2 contactSubmitButton" value="LOGIN"/>
                                 </div>
                             </fieldset>
-                        </form>       
+							<p><div id ="result"></div>
                     </div>
                 </div>
 

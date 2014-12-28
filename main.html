@@ -34,11 +34,14 @@
 <script type="text/javascript" src="scripts/custom.js"></script>
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
 
 <script type="text/javascript">
 function swapStyleSheet(sheet){
 	document.getElementById('pagestyle').setAttribute('href', sheet);
 }
+
+
 </script>
 
 </head>
@@ -114,31 +117,31 @@ function swapStyleSheet(sheet){
             <div class="container no-bottom">
             	<p class="column-responsive half-bottom">
             		<img src="images/logo_pln2.jpg" alt="img">
-                    <strong>Jumlah Pelanggan s/d 19-Dec-2014</strong>
+                    <strong>Jumlah Pelanggan s/d <b id ='today_date'></b></strong>
                     <em>
-                     <b>POSTPAID&nbsp;: </b> 40,102,922
+                     <b>POSTPAID&nbsp;: </b> <b id ='total_cust_postpaid'></b>
                      <br>
-                     <b>PREPAID &nbsp;&nbsp; : </b> 17,587,421
+                     <b>PREPAID &nbsp;&nbsp; : </b> <b id ='total_cust_prepaid'></b>
                 	   </em>
             	</p>
             	<p class="column-responsive half-bottom">
             		<img src="images/logo_pln2.jpg" alt="img">
-                    <strong>Kapasitas Pelanggan s/d 19-Dec-2014</strong>
+                     <strong>Kapasitas Pelanggan s/d <b id ='today_date2'></b></strong>
                     <em>
-                     <b>POSTPAID&nbsp;: </b> 78,406.63 MVA
+                     <b>POSTPAID&nbsp;: </b>  <b id ='total_capacity_postpaid'></b> MVA
                      <br>
-                     <b>PREPAID &nbsp;&nbsp; : </b> 17,727.05 MVA
+                     <b>PREPAID &nbsp;&nbsp; : </b><b id ='total_capacity_prepaid'></b>  MVA
                 	   </em>
             	</p>               
             	<p class="column-responsive half-bottom last-column">
             		<img src="images/logo_pln2.jpg" alt="img">
-                    <strong>Pelunasan Pelanggan s/d 19-Dec-2014</strong>
+                    <strong>Pelunasan Pelanggan s/d <b id ='today_date3'></b></strong>
                     <em>
-                     <b>POSTPAID&nbsp; &nbsp; &nbsp; &nbsp; : </b> 1.71 T
+                     <b>POSTPAID&nbsp; &nbsp; &nbsp; &nbsp; : </b> <b id ='total_trans_postpaid'></b>
                      <br>
-                     <b>PREPAID&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; : </b> 0.53 T
+                     <b>PREPAID&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; : </b> <b id ='total_trans_prepaid'></b>
                      <br>
-                     <b>NONTAGLIS &nbsp;&nbsp; : </b> 0.18 T
+                     <b>NONTAGLIS &nbsp;&nbsp; : </b><b id ='total_trans_nontaglis'></b>
                 	   </em>
             	</p>
                 <div class="clear"></div>
