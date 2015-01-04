@@ -9,7 +9,7 @@ $(document).ready(function()
 		
 		$.ajax({
 			type: "POST",
-			url : "http://localhost/mobility/login_admin_cpanel/validate_credentials_mobile",
+			url : "http://pln.ifabula.com/login_admin_cpanel/validate_credentials_mobile",
 			data : "username="+sendu+"&password="+sendp,
 			dataType: "json",
 			success: function(msg,string,jqXHR)

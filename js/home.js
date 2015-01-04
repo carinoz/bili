@@ -1,6 +1,10 @@
 $(document).ready(function()
 {
-
+	function format1(n) {
+    return  n.toFixed(2).replace(/./g, function(c, i, a) {
+        return i > 0 && c !== "." && (a.length - i) % 3 === 0 ? "," + c : c;
+    });
+}
 	// Function to get today date
 	var today = new Date();
 	var dd = today.getDate();
@@ -33,7 +37,7 @@ $(document).ready(function()
 	}
 	today = dd+' '+mm+' '+yyyy; 
 	curr_date = yyyy+'/'+mm+'/'+dd;
-	document.getElementById("today_date").innerHTML = today;
+	//document.getElementById("today_date").innerHTML = today;
 	//$("#today_date").html(today);
 	$("#today_date2").html(today);
 	$("#today_date3").html(today);
@@ -53,7 +57,20 @@ $(document).ready(function()
 				$("#total_capacity_postpaid").html(msg.total_capacity_postpaid);
 				$("#total_trans_prepaid").html(msg.total_trans_prepaid);
 				$("#total_trans_postpaid").html(msg.total_trans_postpaid);
-				$("#total_trans_nontaglis").html(msg.total_trans_nontaglis);
+				//$("#total_trans_nontaglis").html(msg.total_trans_nontaglis);
+				
+			} // string : cek suskses ato gagal, 
+		})
+	
+	$.ajax({
+			type: "POST",
+			url : "http://pln.ifabula.com/mobility_controller/display_login_information",
+			data : "curr_date="+curr_date,
+			dataType: "json",
+			success: function(msg,string,jqXHR)
+			{
+				$("#username").html(msg.username);
+				//$("#total_trans_nontaglis").html(msg.total_trans_nontaglis);
 				
 			} // string : cek suskses ato gagal, 
 		})

@@ -34,6 +34,7 @@
 <script type="text/javascript" src="scripts/custom.js"></script>
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
+<script type="text/javascript" src="js/chart_pelunasan.js"></script>
 
 <script type="text/javascript">
 function swapStyleSheet(sheet){
@@ -116,29 +117,53 @@ function swapStyleSheet(sheet){
         <div class="content">
         
         <!-- Pelanggan Daya Terbesar -->
-        
+         <section class="chart-row">
+         <h2>TREND TOTAL PELUNASAN Tahun 2014 (Trilyun)</h2>
+		 <b style="color:#F7464A">POSTPAID</b> &nbsp; &nbsp; &nbsp; 
+         <b style="color:#FDB45C">PREPAID</b> &nbsp; &nbsp; &nbsp; 
+         <div class="chart-chart">
+          <div id="canvas-holder">
+           <canvas id="TrendTotalPelunasan" width="500" height="500" />
+          </div>
+         </div>
+        </section><br><br><br>
         <section class="chart-row">
-         <h2>TOTAL PELUNASAN s/d 19 Desember 2014 (T)</h2>
+         <h2>TOTAL PELUNASAN<b id='test'></b> <b id='pelunasan_start_date'></b>   s/d <b id='pelunasan_end_date'></b>(Trilyun)</h2>
          <b style="color:#F7464A">POSTPAID</b> &nbsp; &nbsp; &nbsp; 
          <b style="color:#FDB45C">PREPAID</b> &nbsp; &nbsp; &nbsp; 
          <b style="color:#46BFBD">NONTAGLIS</b>
          <br><br>
          <div class="chart-chart">
           <div id="canvas-holder">
-           <canvas id="TotalPelunasan" width="500" height="500" />
+           <canvas id="TotalPelunasan" width="300" height="300" />
           </div>
          </div>
         </section><br><br><br><br>
         <section class="chart-row">
-        </section><br><br>
-        <section class="chart-row">
-         <h2>TREND TOTAL PELUNASAN (Trilyun)</h2>
+		 <h2>TOTAL PELUNASAN PER WILAYAH <b id='test'></b> <b id='pelunasan_wil_start_date'></b>   s/d <b id='pelunasan_wil_end_date'></b>(Trilyun)</h2>
+         <b style="color:#F7464A">POSTPAID</b> &nbsp; &nbsp; &nbsp; 
+         <b style="color:#FDB45C">PREPAID</b> &nbsp; &nbsp; &nbsp; 
+
+         <br><br>
          <div class="chart-chart">
           <div id="canvas-holder">
-           <canvas id="TrendTotalPelunasan" width="500" height="500" />
+           <canvas id="TotalPelunasanWilayah" width="500" height="500" />
           </div>
          </div>
-        </section>
+        </section><br><br>
+		
+		 <section class="chart-row">
+		 <h2>JUMLAH LEMBAR PELUNASAN <b id='test'></b> <b id='pelunasan_lembar_start_date'></b>   s/d <b id='pelunasan_lembar_end_date'></b> (Juta)</h2>
+         <b style="color:#125864">POSTPAID</b> &nbsp; &nbsp; &nbsp; 
+         <b style="color:#670808">PREPAID</b>
+         <br><br>
+         <div class="chart-chart">
+          <div id="canvas-holder">
+           <canvas id="LembarPelunasan" width="500" height="500" />
+          </div>
+         </div>
+        </section><br><br>
+       
         <br><br><br>
 
         
@@ -147,96 +172,55 @@ function swapStyleSheet(sheet){
                 <div class="container no-bottom">
                     <div class="contact-form no-bottom"> 
                     
-                        <form action="dash-onlinepayment.html" method="post" class="contactForm" id="contactForm">
+
                             <fieldset>
-                                <div class="formFieldWrap">
+                               <div class="formFieldWrap">
                                     <label class="field-title contactNameField" for="contactNameField">Range Bulan Pertama:</label>
-                                    <select name="" class="contactField2">
-                                     <option value="">Januari 2014</option>
-                                     <option value="">Februari 2014</option>
-                                     <option value="">Maret 2014</option>
-                                     <option value="">April 2014</option>
-                                     <option value="">Mei 2014</option>
-                                     <option value="">Juni 2014</option>
-                                     <option value="">July 2014</option>
-                                     <option value="">Agustus 2014</option>
-                                     <option value="">September 2014</option>
-                                     <option value="">Oktober 2014</option>
-                                     <option value="">November 2014</option>
-                                     <option value="">Desember 2014</option>
+                                    <select name="start_date" id='start_date' class="contactField2">
+                                     <option value="January 2014">January 2014</option>
+                                     <option value="Febuary 2014">Febuary 2014</option>
+                                     <option value="March 2014">March 2014</option>
+                                     <option value="April 2014">April 2014</option>
+                                     <option value="May 2014">May 2014</option>
+                                     <option value="June 2014">June 2014</option>
+                                     <option value="July 2014">July 2014</option>
+                                     <option value="August 2014">August 2014</option>
+                                     <option value="September 2014	">September 2014</option>
+                                     <option value="October 2014">October 2014</option>
+                                     <option value="November 2014">November 2014</option>
+                                     <option value="December 2014">December 2014</option>
                                     </select>
                                 </div>
                                 <div class="formFieldWrap">
                                     <label class="field-title contactEmailField" for="contactEmailField">Range Bulan Kedua:</label>
-                                    <select name="" class="contactField2">
-                                     <option value="">Januari 2014</option>
-                                     <option value="">Februari 2014</option>
-                                     <option value="">Maret 2014</option>
-                                     <option value="">April 2014</option>
-                                     <option value="">Mei 2014</option>
-                                     <option value="">Juni 2014</option>
-                                     <option value="">July 2014</option>
-                                     <option value="">Agustus 2014</option>
-                                     <option value="">September 2014</option>
-                                     <option value="">Oktober 2014</option>
-                                     <option value="">November 2014</option>
-                                     <option value="">Desember 2014</option>
+                                    <select name="end_date" id='end_date' class="contactField2">
+                                     <option value="January 2014">January 2014</option>
+                                     <option value="Febuary 2014">Febuary 2014</option>
+                                     <option value="March 2014">March 2014</option>
+                                     <option value="April 2014">April 2014</option>
+                                     <option value="May 2014">May 2014</option>
+                                     <option value="June 2014">June 2014</option>
+                                     <option value="July 2014">July 2014</option>
+                                     <option value="August 2014">August 2014</option>
+                                     <option value="September 2014	">September 2014</option>
+                                     <option value="October 2014">October 2014</option>
+                                     <option value="November 2014">November 2014</option>
+                                     <option value="December 2014" selected>December 2014</option>
                                     </select>
                                 </div>
                                 <div class="formSubmitButtonErrorsWrap">
-                                    <input type="submit" class="buttonWrap button button-blue2 contactSubmitButton" value="PROSES"/>
+                                     <input type="submit" id='button' name='button' class="buttonWrap button button-blue2 contactSubmitButton" value="Submit"/>
                                 </div>
                             </fieldset>
-                        </form>       
+   
                     </div>
                 </div>
         
 
 									<script>
-										var TotalPelunasanData = [
-														{
-																		value: 1.74,
-																		color:"#F7464A",
-																		highlight: "#FF5A5E",
-																		label: "POSTPAID"
-														},
-														{
-																		value: 0.53,
-																		color: "#FDB45C",
-																		highlight: "#FFC870",
-																		label: "PREPAID"
-														},
-														{
-																		value: 0.18,
-																		color: "#46BFBD",
-																		highlight: "#5AD3D1",
-																		label: "NONTAGLIS"
-														}
-										]									
+																
 										
-										var TrendTotalPelunasanData = {
-														labels: ["Januari 2014", "Februari 2014", "Maret 2014", "April 2014", "Mei 2014", "Juni 2014", "Juli 2014", "Agustus 2014", "September 2014", "Oktober 2014", "November 2014", "Desember 2014"],
-														datasets: [
-																		{
-																						label: "Total Pelunasan",
-																						fillColor: "rgba(220,220,220,0.2)",
-																						strokeColor: "#3daabc",
-																						pointColor: "#125864",
-																						pointStrokeColor: "#fff",
-																						pointHighlightFill: "#fff",
-																						pointHighlightStroke: "rgba(220,220,220,1)",
-																						data: [45, 47, 51, 55, 59, 64, 71, 73, 75, 77, 79, 81]
-																		}
-														]
-										};										
-									
-									
-         window.onload = function(){
-          var ctx = document.getElementById("TotalPelunasan").getContext("2d");
-          window.myPieChart = new Chart(ctx).Pie(TotalPelunasanData, {responsive : true});
-          var ctx2 = document.getElementById("TrendTotalPelunasan").getContext("2d");
-          window.myLineChart = new Chart(ctx2).Line(TrendTotalPelunasanData, {responsive : true});
-         };
+						
         </script>
 
         <!-- END Pelanggan Daya Terbesar -->

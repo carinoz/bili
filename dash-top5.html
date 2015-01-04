@@ -34,6 +34,7 @@
 <script type="text/javascript" src="scripts/custom.js"></script>
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
+<script type="text/javascript" src="js/chart_top5.js"></script>
 
 <script type="text/javascript">
 function swapStyleSheet(sheet){
@@ -98,7 +99,7 @@ function swapStyleSheet(sheet){
         </div>
     </div>
 
-
+h 
     <div id="content" class="page-content">	
     	<div class="content-controls solid-color fixed-header">
         	<a href="#" class="deploy-sidebar"></a>
@@ -115,10 +116,29 @@ function swapStyleSheet(sheet){
         
         <div class="content">
         
-        <!-- Pelanggan Daya Terbesar -->
-        
         <section class="chart-row">
-         <h2>5 Pelanggan Daya Terbesar (MVA)</h2>
+         <h2>5 Unit Jumlah Pelanggan Terbesar </b> <b id='pelanggan_terbesar_start'></b>   s/d <b id='pelanggan_terbesar_end'></b></h2>
+         <div class="chart-chart">
+          <div id="canvas-holder">
+           <canvas id="5JumlahPelangganTerbesar" width="500" height="500" />
+          </div>
+         </div>
+        </section><br><br>
+		
+		<section class="chart-row">
+         <h2>5 Unit KWH Terbesar </b> <b id='kwh_terbesar_start'></b>   s/d <b id='kwh_terbesar_end'></b></h2>
+         <div class="chart-chart">
+          <div id="canvas-holder">
+           <canvas id="5KWHTerbesar" width="500" height="500" />
+          </div>
+         </div>
+        </section><br><br>
+		
+
+		
+		
+        <section class="chart-row">
+         <h2>5 Unit Daya Terbesar (MVA) Periode </b> <b id='daya_terbesar_start'></b>   s/d <b id='daya_terbesar_end'></b></h2>
          <div class="chart-chart">
           <div id="canvas-holder">
            <canvas id="5DayaTerbesar" width="500" height="500" />
@@ -126,39 +146,25 @@ function swapStyleSheet(sheet){
          </div>
         </section><br><br>
         <section class="chart-row">
-         <h2>5 Pelanggan Daya Terbesar (Miliyar)</h2>
+         <h2>5 Bank Pelunasan Terbesar (Triliun) <b id='bank_terbesar_start'></b>   s/d <b id='bank_terbesar_end'></b></h2>
          <div class="chart-chart">
           <div id="canvas-holder">
-           <canvas id="5PembayaranTerbesar" width="500" height="500" />
+           <canvas id="5BankTerbesar" width="500" height="500" />
           </div>
          </div>
         </section><br><br>
         <section class="chart-row">
-         <h2>5 Unit Pelanggan Terbesar (Juta)</h2>
+      
+		 <section class="chart-row">
+         <h2>5 Merchant Pelunasan Terbesar (Trilyun) <b id='merchant_terbesar_start'></b>   s/d <b id='merchant_terbesar_end'></b></h2>
          <div class="chart-chart">
           <div id="canvas-holder">
-           <canvas id="5UnitPelangganTerbesar" width="500" height="500" />
+           <canvas id="5MerchantPelunasanTerbesar" width="500" height="500" />
           </div>
          </div>
         </section><br><br>
         <section class="chart-row">
-         <h2>5 Unit Pendapatan Terbesar (Trilyun)</h2>
-         <div class="chart-chart">
-          <div id="canvas-holder">
-           <canvas id="5UnitPendapatanTerbesar" width="500" height="500" />
-          </div>
-         </div>
-        </section><br><br>
-        <section class="chart-row">
-         <h2>5 Bank Pelunasan Terbesar (Trilyun)</h2>
-         <div class="chart-chart">
-          <div id="canvas-holder">
-           <canvas id="5BankPelunasanTerbesar" width="500" height="500" />
-          </div>
-         </div>
-        </section><br><br>
-        <section class="chart-row">
-         <h2>5 Switching Pelunasan Terbesar (Trilyun)</h2>
+         <h2>5 Switching Pelunasan Terbesar (Trilyun) <b id='switching_terbesar_start'></b>   s/d <b id='switching_terbesar_end'></b></h2>
          <div class="chart-chart">
           <div id="canvas-holder">
            <canvas id="5SwitchingPelunasanTerbesar" width="500" height="500" />
@@ -166,102 +172,53 @@ function swapStyleSheet(sheet){
          </div>
         </section>
         <br><br><br>
-        
-
-									<script>
-         var PelangganDayaTerbesarData = {
-             labels: ["PT. A", "PT. B", "PT. C", "PT. D", "PT. E"],
-             datasets: [
-                 {
-                     label: "5 Pelanggan Daya Terbesar (MVA)",
-                     fillColor: "#044853",
-                     strokeColor: "#044853",
-                     highlightFill: "#0991a8",
-                     highlightStroke: "#0991a8",
-                     data: [12000, 10000, 8000, 6000, 4000]
-                 }
-             ]
-         };
-         var PelangganPembayaranTerbesarData = {
-             labels: ["PT. AA", "PT. BB", "PT. CC", "PT. DD", "PT. EE"],
-             datasets: [
-                 {
-                     label: "5 Pelanggan Pembayaran Terbesar (Miliyar)",
-                     fillColor: "#740808",
-                     strokeColor: "#740808",
-                     highlightFill: "#ba1c1c",
-                     highlightStroke: "#ba1c1c",
-                     data: [250, 200, 150, 100, 50]
-                 }
-             ]
-         };
-         var UnitPelangganTerbesarData = {
-             labels: ["Unit A", "Unit B", "Unit C", "Unit D", "Unit E"],
-             datasets: [
-                 {
-                     label: "5 Unit Pelanggan Terbesar (Juta)",
-                     fillColor: "#092d70",
-                     strokeColor: "#092d70",
-                     highlightFill: "#1850b5",
-                     highlightStroke: "#1850b5",
-                     data: [25, 20, 15, 10, 5]
-                 }
-             ]
-         };
-         var UnitPendapatanTerbesarData = {
-             labels: ["Unit A", "Unit B", "Unit C", "Unit D", "Unit E"],
-             datasets: [
-                 {
-                     label: "5 Unit Pendapatan Terbesar (Trilyun)",
-                     fillColor: "#867f0d",
-                     strokeColor: "#867f0d",
-                     highlightFill: "#c8be1a",
-                     highlightStroke: "#c8be1a",
-                     data: [6, 5, 4, 3, 2]
-                 }
-             ]
-         };
-         var BankPelunasanTerbesarData = {
-             labels: ["Bank A", "Bank B", "Bank C", "Bank D", "Bank E"],
-             datasets: [
-                 {
-                     label: "5 Unit Pendapatan Terbesar (Trilyun)",
-                     fillColor: "#0a6a5b",
-                     strokeColor: "#0a6a5b",
-                     highlightFill: "#1dbba3",
-                     highlightStroke: "#1dbba3",
-                     data: [6, 5, 4, 3, 2]
-                 }
-             ]
-         };
-         var SwitchingPelunasanTerbesarData = {
-             labels: ["Switching A", "Switching B", "Switching C", "Switching D", "Switching E"],
-             datasets: [
-                 {
-                     label: "5 Unit Pendapatan Terbesar (Trilyun)",
-                     fillColor: "#7f0e76",
-                     strokeColor: "#7f0e76",
-                     highlightFill: "#c41fb6",
-                     highlightStroke: "#c41fb6",
-                     data: [6, 5, 4, 3, 2]
-                 }
-             ]
-         };
-         window.onload = function(){
-          var ctx = document.getElementById("5DayaTerbesar").getContext("2d");
-          window.myBarChart = new Chart(ctx).Bar(PelangganDayaTerbesarData, {responsive : true});
-          var ctx2 = document.getElementById("5PembayaranTerbesar").getContext("2d");
-          window.myBarChart2 = new Chart(ctx2).Bar(PelangganPembayaranTerbesarData, {responsive : true});
-          var ctx3 = document.getElementById("5UnitPelangganTerbesar").getContext("2d");
-          window.myBarChart3 = new Chart(ctx3).Bar(UnitPelangganTerbesarData, {responsive : true});
-          var ctx4 = document.getElementById("5UnitPendapatanTerbesar").getContext("2d");
-          window.myBarChart4 = new Chart(ctx4).Bar(UnitPendapatanTerbesarData, {responsive : true});
-          var ctx5 = document.getElementById("5BankPelunasanTerbesar").getContext("2d");
-          window.myBarChart5 = new Chart(ctx5).Bar(BankPelunasanTerbesarData, {responsive : true});
-          var ctx6 = document.getElementById("5SwitchingPelunasanTerbesar").getContext("2d");
-          window.myBarChart6 = new Chart(ctx6).Bar(SwitchingPelunasanTerbesarData, {responsive : true});
-         };
-        </script>
+        <div class="decoration"></div>
+                <h2>DATA LEBIH DETAIL</h2>
+                <div class="container no-bottom">
+                    <div class="contact-form no-bottom"> 
+                    
+                       <fieldset>
+                                <div class="formFieldWrap">
+                                    <label class="field-title contactNameField" for="contactNameField">Range Bulan Pertama:</label>
+                                    <select name="start_date" id='start_date' class="contactField2">
+                                     <option value="January 2014">January 2014</option>
+                                     <option value="Febuary 2014">Febuary 2014</option>
+                                     <option value="March 2014">March 2014</option>
+                                     <option value="April 2014">April 2014</option>
+                                     <option value="May 2014">May 2014</option>
+                                     <option value="June 2014">June 2014</option>
+                                     <option value="July 2014">July 2014</option>
+                                     <option value="August 2014">August 2014</option>
+                                     <option value="September 2014	">September 2014</option>
+                                     <option value="October 2014">October 2014</option>
+                                     <option value="November 2014">November 2014</option>
+                                     <option value="December 2014">December 2014</option>
+                                    </select>
+                                </div>
+                                <div class="formFieldWrap">
+                                    <label class="field-title contactEmailField" for="contactEmailField">Range Bulan Kedua:</label>
+                                    <select name="end_date" id='end_date' class="contactField2">
+                                     <option value="January 2014">January 2014</option>
+                                     <option value="Febuary 2014">Febuary 2014</option>
+                                     <option value="March 2014">March 2014</option>
+                                     <option value="April 2014">April 2014</option>
+                                     <option value="May 2014">May 2014</option>
+                                     <option value="June 2014">June 2014</option>
+                                     <option value="July 2014">July 2014</option>
+                                     <option value="August 2014">August 2014</option>
+                                     <option value="September 2014	">September 2014</option>
+                                     <option value="October 2014">October 2014</option>
+                                     <option value="November 2014">November 2014</option>
+                                     <option value="December 2014" selected>December 2014</option>
+                                    </select>
+                                </div>
+                                <div class="formSubmitButtonErrorsWrap">
+                                    <input type="submit" id='button' name='button' class="buttonWrap button button-blue2 contactSubmitButton" value="Submit"/>
+                                </div>
+                            </fieldset>
+                             
+                    </div>
+                </div>
 
         <!-- END Pelanggan Daya Terbesar -->
 
