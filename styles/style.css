@@ -271,12 +271,13 @@ and (width : 798px){
 .quote-item strong{
 	text-align:center;
 	font-style:normal;
-	font-weight:400;
+	font-weight:bold;
 	display:block;
 	width:500px;
 	margin-left:auto;
 	margin-right:auto;
 }
+
 
 .quote-item img{
 	border-radius:100px;
